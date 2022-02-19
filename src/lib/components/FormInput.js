@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import './styles/index.css'; 
 
-function FormInput() {
+function FormInput({container,attr,placeholder,handleInputValue}) {
   const [card,setCard] = useState('');
   const [status,setStatus] = useState(false);
 
@@ -8,31 +9,29 @@ function FormInput() {
     let data = value;
     let strLength = value.length;
     let tracker = [4,9,14];
-      if(tracker.includes(strLength) && !status){
-        data += ' ';
-      }
-      setCard(data);
-      console.log(value);
+    if(tracker.includes(strLength) && !status){
+      data += ' ';
+    }
+    setCard(data);
   };
-
   const updateCard = (e) => { 
     e.persist();
     if(e.target.value.length < 20 ) {
       addSpacing(e.target.value);
+      handleInputValue(e.target.value);
     }
   }
-
   const listenTODelete = (e) => {
-    if(e.key === 'Backspace') setStatus(true)
+    if(e.key === 'Backspace' || e.key === 'Delete') setStatus(true)
     else setStatus(false)
   }
   return (
     <div>
-        <div className="h-40 my-4 bg-white rounded-md">
-          <input type="text" value={card} onChange={updateCard} onKeyDown={listenTODelete} className="focus:outline-red-100 py-3 px-10 text-sm" placeholder="5399 9089 1234 1970" />
-        </div>
+      <div className={container}>
+        <input type="text" value={card} onChange={updateCard} onKeyDown={listenTODelete} className={attr} placeholder={placeholder} />
+      </div>
     </div>
   );
 }
 
-export default App;
+export default FormInput;
