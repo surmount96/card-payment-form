@@ -43,3 +43,7 @@ export default App;
 | attr | string | className for input styling |
 | placeholder | string | An example of what you expect from the user |
 | handleInputValue | function | listening to event on the component |
+
+### Customizing
+
+By default, `cpf-input` is available as a default styling, it's optional.

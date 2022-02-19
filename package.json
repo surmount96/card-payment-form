@@ -1,6 +1,6 @@
 {
   "name": "card-payment-form",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "author" : "Ayanwoye Ayodeji",
   "description" : "This component helps accept users card and format it nicely",
