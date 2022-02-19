@@ -3,7 +3,8 @@
 Powerful, lightweight and fully customizable card payment component for React apps.
 
 
-### Available props `container, attr,placeholder,handleInputValue`
+### Available props 
+`container, attr,placeholder,handleInputValue`
 
 ### DEMO
 Link coming soon
@@ -34,3 +35,11 @@ function App() {
 export default App;
 
 ```
+
+### Props
+| Name | Value | Description |
+| --- | --- | --- |
+| container | string |  className for outer div styling |
+| attr | string | className for input styling |
+| placeholder | string | An example of what you expect from the user |
+| handleInputValue | function | listening to event on the component |
